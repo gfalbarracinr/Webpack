@@ -6,10 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open --config webpack.dev.js",
-    "build": "webpack --config webpack.dev.js"
+    "build": "webpack --config webpack.dev.js",
+    "prepare": "husky install",
+    "format": "eslint src/* --fix"
   },
   "author": "Giovanny Albarracin",
   "license": "ISC",
+  "lint-staged": {
+    "*.js": "npm run format"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -30,6 +35,8 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.6.1",
     "terser-webpack-plugin": "^5.3.6",
     "webpack-cli": "^4.10.0",
